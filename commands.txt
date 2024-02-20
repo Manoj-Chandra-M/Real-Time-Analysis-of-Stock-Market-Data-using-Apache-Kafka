@@ -1,0 +1,51 @@
+Steps to follow to execute this project
+
+Create an EC2 instance on AWS
+Connect to instance using SSH client
+copy paste the ssh command on git bash opened at stock market folder created locally.
+Connect to EC2 instance
+Type the below commands to download kafka from Apache documentation
+
+wget https://downloads.apache.org/kafka/3.4.1/kafka_2.12-3.4.1.tgz
+tar -xvf kafka_2.12-3.4.1.tgz
+
+Kafka runs on JVM so we need to set up java
+Refer this article on how to install java 8 on amazon linux. https://tecadmin.net/install-java-on-amazon-linux/
+use these commands:
+$ sudo amazon-linux-extras enable corretto8
+$ sudo yum install java-1.8.0-amazon-corretto-devel -y
+
+Check the java version:
+java -version
+
+Navigate into the Kafka folder downloaded
+cd kafka_2.12-3.4.1
+
+Before starting zookeeper and kafka, make sure the address is pointing to public IP and not private since we need to connect Jupyter notebook which is in local to AWS instance.
+Steps:
+sudo nano config/server.properties
+Change ADVERTISED_LISTENERS to public ip of the EC2 instance
+
+Start zookeeper
+bin/zookeeper-server-start.sh config/zookeeper.properties
+
+Open another window to start kafka
+But first ssh to to your ec2 machine as done above
+
+Start Kafka-server
+export KAFKA_HEAP_OPTS="-Xmx256M -Xms128M" 
+This is done to initialize memory of kafka
+cd kafka_2.12-3.4.1
+bin/kafka-server-start.sh config/server.properties
+
+Create Topic
+Duplicate the session & enter in a new console, ssh to to your ec2 machine as done above
+bin/kafka-topics.sh --create --topic demo_test_1 --bootstrap-server {Your public IP}:9092 --replication-factor 1 --partitions 1
+
+Start Producer
+Follow this step on the same terminal as topic creation
+bin/kafka-console-producer.sh --topic demo_test_1 --bootstrap-server {Your public IP}:9092 
+
+Start Consumer
+In a different terminal, ssh to your EC2 machine, navigate to kafka folder then,
+bin/kafka-console-consumer.sh --topic demo_test_1 --bootstrap-server {Your public IP}:9092
