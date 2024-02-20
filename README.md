@@ -62,7 +62,8 @@ When you have data stored in various data sources such as Amazon S3, databases, 
 You can preview the stock market data table in AWS Athena to make sure that data is rightly imported. Make sure to provide a target location/S3 path to store queries.
 
 To see the action in real time, we can send some data in real time by adding a delay of 1 second. This avoids server breakdown. Now run the producer code which sends the data to producer with a delay of 1 second. The consumer consumes this data and sends to S3 bucket. In S3, the data is added slowly i.e the number of rows increases gradually which means we get data in S3 bucket in real time. We can query this data in real time using AWS Athena.
-Thus the entire architecture diagram is covered by executing this project.
+
+Thus the entire architecture diagram is covered. This project was executed by referring Darshil Parmar's youtube channel. You can find his video here: https://www.youtube.com/watch?v=KerNf0NANMo
 
 
 
