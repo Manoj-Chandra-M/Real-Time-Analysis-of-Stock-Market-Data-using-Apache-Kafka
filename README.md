@@ -63,6 +63,14 @@ You can preview the stock market data table in AWS Athena to make sure that data
 
 To see the action in real time, we can send some data in real time by adding a delay of 1 second. This avoids server breakdown. Now run the producer code which sends the data to producer with a delay of 1 second. The consumer consumes this data and sends to S3 bucket. In S3, the data is added slowly i.e the number of rows increases gradually which means we get data in S3 bucket in real time. We can query this data in real time using AWS Athena.
 
+![Screenshot (288)](https://github.com/Manoj-Chandra-M/Real-Time-Analysis-of-Stock-Market-Data-using-Apache-Kafka/assets/104108382/c1428ba0-ec75-4f7e-a4e3-b0b818edb55f)
+
+_Fig 5: Query editor on Amazon Athena_
+
+![Screenshot (289)](https://github.com/Manoj-Chandra-M/Real-Time-Analysis-of-Stock-Market-Data-using-Apache-Kafka/assets/104108382/bb14142a-a212-47dd-b642-5c96dc063b88)
+
+_Fig 6: Results_
+
 Thus the entire architecture diagram is covered. This project was executed by referring Darshil Parmar's youtube channel. You can find his video here: https://www.youtube.com/watch?v=KerNf0NANMo
 
 
