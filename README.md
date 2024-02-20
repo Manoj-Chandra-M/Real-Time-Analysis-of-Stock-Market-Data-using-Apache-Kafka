@@ -51,6 +51,10 @@ Consider any dataset of your interest, in this case I used stock market dataset.
 Go to S3 on AWS console and create a bucket name as you prefer. Make sure it’s a unique name.
 Configure AWS on your local machine. Go to IAM, create a new user and get the access and secret key. Install AWS CLI, and go to cmd. Type aws configure and provide access and secret key id. 	Once configured, you can now send data from local machine to Amazon S3. We have data into S3, now we need to write a crawler.
 
+![Screenshot (287)](https://github.com/Manoj-Chandra-M/Real-Time-Analysis-of-Stock-Market-Data-using-Apache-Kafka/assets/104108382/11d2fe1f-f121-45b2-a63a-22cbaa87e273)
+
+_Fig 4: Data files stored on S3 bucket_
+
 **AWS Glue Crawler** is a component of AWS Glue that automatically discovers the schema of your data and stores the associated metadata in the AWS Glue Data Catalog.
 When you have data stored in various data sources such as Amazon S3, databases, or data warehouses, AWS Glue Crawler can automatically scan these data sources, infer the schema of your data, and create metadata tables in the AWS Glue Data Catalog. This metadata includes information about the data's structure, format, and location. By cataloging your data, AWS Glue makes it easier to query and analyze your data using other AWS services like Amazon Athena.
 
