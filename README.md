@@ -71,7 +71,7 @@ _Fig 5: Query editor on Amazon Athena_
 
 _Fig 6: Results_
 
-Thus the entire architecture diagram is covered. This project was executed by referring Darshil Parmar's youtube channel. You can find his video here: https://www.youtube.com/watch?v=KerNf0NANMo
+Thus the entire architecture diagram is covered. This project was executed by referring to Darshil Parmar's youtube channel. You can find his video here: https://www.youtube.com/watch?v=KerNf0NANMo
 
 
 
